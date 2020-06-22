@@ -1,4 +1,8 @@
-# Vdog
+# vDog
+vDog is a simple application for dog lovers, and it's powered by https://dog.ceo/dog-api/. 
+You can see cute dogs all day by vDog.  
+The vDog docker image is here:  
+https://hub.docker.com/r/vkbaba/vdog
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
