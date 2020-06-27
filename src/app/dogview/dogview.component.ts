@@ -10,11 +10,12 @@ export class DogviewComponent implements OnInit {
   dogList: any = [];
   dog: String;
   i: number = 0;
+
   constructor(private dogApi: ApiService) {
-    this.dogApi.GetDog().subscribe(data => {
+    this.dogApi.GetDogs().subscribe(data => {
       this.dogList = data;
       this.dog = this.dogList.message[0];
-    })    
+    })
   }
 
   ngOnInit(): void {
