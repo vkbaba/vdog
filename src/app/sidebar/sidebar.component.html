@@ -9,11 +9,12 @@
                 <!-- Breed -->
                 <clr-select-container>
                     <label>Breed</label>
-                    <!-- <ng-container *ngFor="let breed of breedList.message">
-                        <select clrSelect name="breeds">
+                    <select clrSelect name="breeds" #sel (change)="doSelect(sel.value)">
+                        <option value="All">All</option>
+                        <ng-container *ngFor="let breed of breedList">
                             <option value={{breed}}>{{breed}}</option>
-                        </select>
-                    </ng-container> -->
+                        </ng-container>
+                    </select>
                 </clr-select-container>
                 <!-- Judas -->
                 <clr-toggle-container>

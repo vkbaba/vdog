@@ -23,7 +23,8 @@ export class ApiService {
   }
 
   GetDogByBreed(breed) {
-    let API_URL = `${this.endpoint}/breed/${breed}/images/random`
+    //Fetch less than 20 images
+    let API_URL = `${this.endpoint}/breed/${breed}/images/random/20`
     return this.http.get(API_URL);
   }
 
