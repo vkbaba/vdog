@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from './../shared/api.service';
+import { DogImageService } from '../shared/dog-image.service';
 
 @Component({
   selector: 'app-dogview',
@@ -7,24 +8,16 @@ import { ApiService } from './../shared/api.service';
   styleUrls: ['./dogview.component.css']
 })
 export class DogviewComponent implements OnInit {
-  dogList: any = [];
-  dog: String;
-  i: number = 0;
-  constructor(private dogApi: ApiService) {
-    this.dogApi.GetDog().subscribe(data => {
-      this.dogList = data;
-      this.dog = this.dogList.message[0];
-    })    
+  constructor(public dogImageService: DogImageService) {
   }
 
   ngOnInit(): void {
   }
 
   doClick(event){
-    this.i++;
-    if (this.i == this.dogList.message.length - 1){
-      this.i = 0;
+    this.dogImageService.imgaeIndex++;
+    if (this.dogImageService.imgaeIndex == this.dogImageService.dogImages.length ){
+      this.dogImageService.imgaeIndex = 0;
     }
-    this.dog = this.dogList.message[this.i];
   }
 }

@@ -1,0 +1,61 @@
+<nav class="sidenav">
+    <section class="sidenav-content">
+        <div class="clr-row"> 
+            <!-- margin -->
+            <div class="clr-col-2"> 
+                <span></span>
+            </div>
+            <div class="clr-col-8">
+                <!-- Breed -->
+                <clr-select-container>
+                    <label>Breed</label>
+                    <select clrSelect name="breeds" #sel (change)="doSelect(sel.value)">
+                        <option value="All">All</option>
+                        <ng-container *ngFor="let breed of breedList">
+                            <option value={{breed}}>{{breed}}</option>
+                        </ng-container>
+                    </select>
+                </clr-select-container>
+                <!-- Judas -->
+                <clr-toggle-container>
+                    <label>Judas Mode</label>
+                    <clr-toggle-wrapper>
+                        <input type="checkbox" clrToggle value="option1" name="options" />
+                    </clr-toggle-wrapper>
+                </clr-toggle-container>
+            </div>
+            <!-- margin -->
+            <div class="clr-col-2"> 
+                <span></span>
+            </div>
+        </div>
+    </section>
+</nav>
+<!-- 
+
+<nav class="sidenav">
+    <div class="clr-col">
+        <span></span>
+    </div>  
+    <section class="sidenav-content">
+
+        <clr-select-container>
+            
+            <label>Breed</label>
+            <select clrSelect name="options">
+              <option value="one">One</option>
+              <option value="two">Two</option>
+              <option value="three">Three</option>
+            </select>
+        </clr-select-container>
+
+        <clr-toggle-container>
+            <label>Judas Mode</label>
+            <clr-toggle-wrapper>
+                <input type="checkbox" clrToggle value="option1" name="options" />
+            </clr-toggle-wrapper>
+        </clr-toggle-container>
+    </section>
+    
+</nav> -->
+
