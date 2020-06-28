@@ -10,6 +10,7 @@ import { DogImageService } from '../shared/dog-image.service';
 export class SidebarComponent implements OnInit {
   breedList: String[];
 
+
   constructor(private dogApi: ApiService, 
               public dogImageService: DogImageService) {
     this.dogApi.GetDogs().subscribe(data => {
@@ -42,8 +43,12 @@ export class SidebarComponent implements OnInit {
       this.dogApi.GetDogByBreed(selectedBreed).subscribe(data => {
         obj = data;
         this.dogImageService.dogImages = obj.message;
-        console.log(obj.message);
       })
     }
+  }
+
+  doJudasClick(){
+    this.dogImageService.judasMode = !this.dogImageService.judasMode;
+    //console.log(process.env["catApiKey"]);
   }
 }
