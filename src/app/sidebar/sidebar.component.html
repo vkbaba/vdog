@@ -6,8 +6,15 @@
                 <span></span>
             </div>
             <div class="clr-col-8">
+                <!-- Judas -->
+                <clr-toggle-container>
+                    <label>Judas Mode</label>
+                    <clr-toggle-wrapper>
+                        <input type="checkbox" clrToggle value="option1" name="options" (change)="doJudasClick()" />
+                    </clr-toggle-wrapper>
+                </clr-toggle-container>
                 <!-- Breed -->
-                <clr-select-container>
+                <clr-select-container *ngIf=!dogImageService.judasMode>
                     <label>Breed</label>
                     <select clrSelect name="breeds" #sel (change)="doSelect(sel.value)">
                         <option value="All">All</option>
@@ -16,13 +23,6 @@
                         </ng-container>
                     </select>
                 </clr-select-container>
-                <!-- Judas -->
-                <clr-toggle-container>
-                    <label>Judas Mode</label>
-                    <clr-toggle-wrapper>
-                        <input type="checkbox" clrToggle value="option1" name="options" />
-                    </clr-toggle-wrapper>
-                </clr-toggle-container>
             </div>
             <!-- margin -->
             <div class="clr-col-2"> 
